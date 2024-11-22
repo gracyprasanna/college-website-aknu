@@ -1,0 +1,217 @@
+                                                                                                                                                                                                                                                                                                    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('./Science\ College.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+        body::before {                                                                                                                                                                                                                                                                                                                                      
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: -1;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            max-width: 400px;
+            width: 800px;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 1rem;
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+            animation: slideIn 1s ease;
+        }
+        @keyframes slideIn {
+            0% { transform: scale(0.7); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .form-title {
+            font-size: 26px;
+            color: #2e8b57;
+            margin-bottom: 0.5rem;
+        }
+        .form-subtitle {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #2e8b57;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #2e8b57;
+        }
+        .input-group label {
+            display: none;
+        }
+        .recover {
+            text-align: right;
+            margin-bottom: 1.5rem;
+        }
+        .recover a {
+            color: #2e8b57;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .recover a:hover {
+            color: #1e5f3b;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2e8b57;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #1e5f3b;
+        }
+        .or {
+            margin: 1.5rem 0;
+            font-size: 14px;
+            color: #888;
+        }
+        .icons i {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #555;
+            cursor: pointer;
+            transition: color 0.3s, transform 0.3s;
+        }
+        .icons i:hover {
+            color: #2e8b57;
+            transform: scale(1.1);
+        }
+        .links {
+            margin-top: 1rem;
+            font-size: 14px;
+        }
+        .link-btn {
+            color: #2e8b57;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .link-btn:hover {
+            color: #1e5f3b;
+        }
+        @media (max-width: 500px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .form-title {
+                font-size: 22px;
+            }
+            .form-subtitle {
+                font-size: 13px;
+            }
+            .btn {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="./Logo.jpg" alt="Logo" class="logo">
+        <h1 class="form-title animated-greeting">Welcome Back!</h1>
+        <p class="form-subtitle">Please log in to your account</p>
+        <form id="loginForm">
+            <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required>
+                <label for="password">Password</label>
+            </div>
+            <p class="recover">
+                <a href="./recover.html">Recover Password</a>
+            </p>
+            <button type="submit" class="btn">Sign In</button>
+        </form>
+        <p class="or">----------or--------</p>
+        <div class="icons">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links">
+            <p>Don't have an account yet?</p>
+            <a href="signup.html" class="link-btn">Sign Up</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            if (email === 'prasana@gmail.com' && password === 'password') {
+                window.location.href = './index2.html';
+            } else {
+                document.getElementById('signInMessage').style.display = 'block';
+                document.getElementById('signInMessage').innerText = 'Invalid email or password.';
+            }
+        });
+    </script>
+</body>
+</html>

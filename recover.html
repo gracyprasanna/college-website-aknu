@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recover Password</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body, html {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('../Science\ College.jpg') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            z-index: -1;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            max-width: 400px;
+            width: 90%;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            animation: fadeIn 1.5s ease;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 1rem;
+            width: 80px;
+            height: auto;
+            border-radius: 50%;
+        }
+        .form-title {
+            font-size: 26px;
+            color: #2e8b57;
+            margin-bottom: 0.5rem;
+        }
+        .form-subtitle {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        .input-group {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+        .input-group i {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #2e8b57;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: #2e8b57;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #2e8b57;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #1e5f3b;
+        }
+        .links {
+            margin-top: 1rem;
+            font-size: 14px;
+        }
+        .link-btn {
+            color: #2e8b57;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .link-btn:hover {
+            color: #1e5f3b;
+        }
+        @media (max-width: 500px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .form-title {
+                font-size: 22px;
+            }
+            .form-subtitle {
+                font-size: 13px;
+            }
+            .btn {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="emailSection">
+        <img src="./logo.png" alt="Logo" class="logo">
+        <h1 class="form-title">Recover Your Password</h1>
+        <p class="form-subtitle">Enter your email to receive an OTP</p>
+        <form id="emailForm">
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="recoverEmail" placeholder="Email" required>
+            </div>
+            <button class="btn" type="button" id="sendOtpBtn">Send OTP</button>
+        </form>
+    </div>
+    
+    <div class="container" id="otpSection" style="display: none;">
+        <img src="../logo.png" alt="Logo" class="logo">
+        <h1 class="form-title">Verify OTP</h1>
+        <p class="form-subtitle">Enter the OTP sent to your email</p>
+        <form id="otpForm">
+            <div class="input-group">
+                <i class="fas fa-key"></i>
+                <input type="text" id="otp" placeholder="Enter OTP" required>
+            </div>
+            <button class="btn" type="button" id="verifyOtpBtn">Verify OTP</button>
+        </form>
+        <div class="links">
+            <p>Didn't receive the OTP?</p>
+            <a href="#" class="link-btn" id="resendOtp">Resend OTP</a>
+        </div>
+    </div>
+
+    <script>
+        let generatedOtp; 
+
+    
+        function generateOtp() {
+            return Math.floor(100000 + Math.random() * 900000).toString();
+        }
+
+        document.getElementById("sendOtpBtn").addEventListener("click", function() {
+            const email = document.getElementById("recoverEmail").value;
+            if (email) {
+                generatedOtp = generateOtp(); 
+                console.log(`OTP sent to ${email}: ${generatedOtp}`); 
+                alert(`OTP sent to ${email}.`); 
+                document.getElementById("emailSection").style.display = "none";
+                document.getElementById("otpSection").style.display = "block";
+            } else {
+                alert("Please enter a valid email.");
+            }
+        });
+
+        document.getElementById("verifyOtpBtn").addEventListener("click", function() {
+            const enteredOtp = document.getElementById("otp").value;
+            if (enteredOtp === generatedOtp) {
+                alert("OTP Verified!"); 
+            } else {
+                alert("Invalid OTP. Please try again."); 
+            }
+        });
+
+        document.getElementById("resendOtp").addEventListener("click", function() {
+            document.getElementById("emailSection").style.display = "block";
+            document.getElementById("otpSection").style.display = "none";
+        });
+    </script>
+</body>
+</html>

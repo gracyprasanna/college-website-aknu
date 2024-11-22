@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Adikavi Nannaya University - ECE Resources</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+    }
+
+    .header {
+      width: 100%;
+      background-color: #004d99;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .header .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.5s ease;
+    }
+
+    .header img:hover {
+      transform: scale(1.1) rotate(360deg);
+    }
+
+    .header h1 {
+      font-size: 28px;
+      margin: 10px 0 0 0;
+      color: #fff;
+      animation: textColorChange 4s infinite alternate;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin-left: 10px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #003366;
+      border-radius: 5px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      text-align: center;
+      background-color: #fff;
+      padding: 30px;
+      margin: 180px auto 0; 
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .ucoe {
+      font-size: 24px;
+      color: #ff704d;
+      margin-bottom: 5px;
+    }
+
+    .ece {
+      font-size: 22px;
+      color: #4CAF50;
+      margin-bottom: 30px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #e0e0e0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 300px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      background-color: #d0d0d0;
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      margin: 10px 0;
+    }
+
+    .card button {
+      padding: 10px 20px;
+      border: none;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      font-size: 16px;
+    }
+
+    .card button:hover {
+      background-color: #45a049;
+    }
+
+    .arrow {
+      margin-left: 5px;
+      transition: transform 0.3s;
+    }
+
+    .card:hover .arrow {
+      transform: translateX(5px);
+    }
+
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes textColorChange {
+      0% { color: #ffcc00; }
+      100% { color: #00ffcc; }
+    }
+
+
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+        max-width: none;
+      }
+
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .navbar a {
+        margin: 5px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Adikavi Nannaya University Logo">
+      <h1>Adikavi Nannaya University</h1>
+      
+    </div>
+  </header>
+
+  <div class="container">
+    <h2 class="ucoe">UCOE - Juniors</h2>
+    <h2 class="ece">Electronic and Communication Engineering</h2>
+    
+    <div class="card-container">
+      <div class="card">
+        <h3>Syllabus</h3>
+        <button onclick="goToPage('https://mega.nz/folder/yMZ0CazQ#WsYyhXCfUK1nrdECJb5HmQ')">Go <span class="arrow">→</span></button>
+      </div>
+
+      <div class="card">
+        <h3>Notes & Materials</h3>
+        <button onclick="goToPage('https://mega.nz/folder/XF5VwJhZ#xMEBBcpNaRWA08vC0UqEwg')">Go <span class="arrow">→</span></button>
+      </div>
+
+      <div class="card">
+        <h3>Previous Question Papers</h3>
+        <button onclick="goToPage('https://mega.nz/folder/nQph1QyS#fgGh7vgBBtb_mzCH3fqwVA')">Go <span class="arrow">→</span></button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function goToPage(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>

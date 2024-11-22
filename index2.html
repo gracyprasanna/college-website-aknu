@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+   <title>University Website</title>
+   <style>
+      body {
+         font-family: 'Poppins', sans-serif;
+         margin: 0;
+         padding: 0;
+         background-color: #f7f7f7;
+         overflow-x: hidden;
+      }
+      header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 10px 20px;
+         background-color: #4CAF50;
+         color: white;
+         position: sticky;
+         top: 0;
+         z-index: 1000;
+      }
+      header .logo {
+         display: flex;
+         align-items: center;
+      }
+      header .logo img {
+         width: 100px;
+         height: 100px;
+         margin-right: 10px;
+         border-radius: 50%;
+      }
+      nav a {
+         margin: 0 15px;
+         text-decoration: none;
+         color: white;
+         font-size: 16px;
+         font-weight: bold;
+         transition: color 0.3s;
+      }
+      nav a:hover {
+         color: #FFD700;
+      }
+      .sign-out-btn {
+         background-color: #FFD700;
+         color: #4CAF50;
+         border: none;
+         padding: 8px 16px;
+         border-radius: 5px;
+         font-weight: bold;
+         cursor: pointer;
+         transition: background-color 0.3s;
+      }
+      .sign-out-btn:hover {
+         background-color: #fff;
+         color: #4CAF50;
+      }
+      .main-section {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         padding: 40px;
+         background-color: #fff;
+         margin: 20px auto;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+         border-radius: 10px;
+      }
+      .main-section img {
+         width: 200px;
+         height: 300px;
+         object-fit: cover;
+         border-radius: 10px;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .carousel {
+         width: 900px;
+         height: 320px;
+         border-radius: 10px;
+         overflow: hidden;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+      .carousel img {
+         height: 300px;
+         object-fit: cover;
+      }
+      .departments {
+         display: flex;
+         justify-content: space-evenly;
+         margin: 40px 0;
+         text-align: center;
+      }
+      .dept-box {
+         width: 150px;
+         height: 150px;
+         background-color: #4CAF50;
+         color: white;
+         font-weight: bold;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         border-radius: 10px;
+         transition: background-color 0.3s, transform 0.3s;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+         cursor: pointer;
+      }
+      .dept-box:hover {
+         background-color: #FFD700;
+         transform: scale(1.1);
+      }
+      .dept-box p {
+         margin: 0;
+      }
+      footer {
+         background-color: #333;
+         color: white;
+         padding: 15px;
+         text-align: center;
+         font-size: 14px;
+         position: relative;
+         bottom: 0;
+         width: 100%;
+      }
+      .scroll-up {
+         position: fixed;
+         right: 30px;
+         bottom: 30px;
+         font-size: 24px;
+         background-color: #4CAF50;
+         padding: 10px;
+         border-radius: 50%;
+         color: white;
+         cursor: pointer;
+         display: none;
+         transition: transform 0.3s;
+      }
+      .scroll-up:hover {
+         transform: scale(1.1);
+      }
+   </style>
+</head>
+<body>
+
+   <header class="header" id="header">
+      <div class="logo">
+         <img src="logo.png" alt="University Logo">
+         <h1>Adikavi Nannaya University</h1>
+      </div>
+      <nav>
+         <a href="https://aknu.edu.in/">Home</a>
+         <a href="ABOUT.html">About Page</a>
+         <a href="studentcorner.html">Student Corner</a>
+         <a href="contactus.html">Contact Us</a>
+      </nav>
+      <button class="sign-out-btn" onclick="logout()">Sign Out</button>
+   </header>
+
+   <main class="main">
+      <section class="home section" id="home">
+         <div class="main-section">
+            <img src="vc.jpg" alt="VC Image" id="vc-img">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+               <div class="carousel-inner">
+                  <div class="carousel-item active">
+                     <img src="Science College.jpg" class="d-block w-100" alt="Image 1">
+                  </div>
+                  <div class="carousel-item">
+                     <img src="university gate.jpeg" class="d-block w-100" alt="Image 2">
+                  </div>
+                  <div class="carousel-item">
+                     <img src="AKNU Convention Center.jpg" class="d-block w-100" alt="Image 3">
+                  </div>
+               </div>
+               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+               </button>
+               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+               </button>
+            </div>
+            <img src="principal.jpg" alt="Principal Image" id="principal-img">
+         </div>
+      </section>
+
+      <div style="text-align: center; font-size: 20px; margin: 20px; font-weight: bold;">
+         <p>Study easier, faster & better</p>
+      </div>
+
+      <section class="services section">
+         <div class="departments">
+            <div class="dept-box">
+               <a href="ECE.html"><p>ECE<br>Let's Explore</p></a>
+            </div>
+            <div class="dept-box">
+               <a href="CSE.html"><p>CSE<br>Let's Explore</p></a>
+            </div>
+            <div class="dept-box">
+               <a href="EIE.html"><p>EIE<br>Let's Explore</p></a>
+            </div>
+            <div class="dept-box">
+               <a href="CIVIL.html"><p>CIVIL<br>Let's Explore</p></a>
+            </div>
+            <div class="dept-box">
+               <a href="mechanical.html"><p>MECH<br>Let's Explore</p></a>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <footer class="footer">
+      <p>&copy; 2024 Adikavi Nannaya University. All rights reserved.</p>
+   </footer>
+
+   <i class="ri-arrow-up-line scroll-up" id="scroll-up"></i>
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+   <script>
+      function logout() {
+         window.location.href = "./homepage.html"; 
+      }
+   </script>
+</body>
+</html>

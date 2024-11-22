@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Contact Us - Adikavi Nannaya University</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        .header {
+            width: 100%;
+            background-color: #004d99;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .header .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 100px auto 0;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #555;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: fadeInUp 1.2s ease-in-out;
+        }
+
+        .contact-info a {
+            text-decoration: none;
+            color: #004d99;
+            margin: 10px 0;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info img {
+            width: 24px; 
+            height: 24px; 
+            margin-right: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info a:hover img {
+            transform: scale(1.2); 
+        }
+
+        .contact-info a:hover {
+            color: #45a049;
+            transform: scale(1.05);
+        }
+
+    
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+       
+        @media (max-width: 768px) {
+            .header img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .header h1 {
+                font-size: 20px;
+            }
+
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="logo.jpg" alt="Adikavi Nannaya University Logo">
+            <h1>Adikavi Nannaya University</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Reach out to us through any of the following channels:</p>
+        
+        <div class="contact-info">
+            <a href="https://www.linkedin.com/school/s.k.v.t.degree-college/" target="_blank">
+                <img src="linkdin.webp" alt="LinkedIn Logo"> LinkedIn
+            </a>
+            <a href="https://www.youtube.com/@nannayanewstv" target="_blank">
+                <img src="youtube.png" alt="YouTube Logo"> YouTube
+            </a>
+            <a href="https://www.instagram.com/aknu_rjy/" target="_blank">
+                <img src="instagram.png" alt="Instagram Logo"> Instagram
+            </a>
+            <a href="gracy.prasanna@gmail.com">
+                <img src="gmail.png" alt="Gmail Logo"> Gmail
+            </a>
+            <a href="tel:8331810269">Mobile: +91 8331810269</a>
+            <a href="tel:7207014338">Mobile: +91 7207014338</a>
+        </div>
+    </div>
+</body>
+</html>

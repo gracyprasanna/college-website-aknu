@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About Us - Adikavi Nannaya University</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      line-height: 1.6;
+    }
+
+    .header {
+      width: 100%;
+      background-color: #004d99;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .header .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+    }
+
+    .header h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 100px auto 0; 
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #555;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    li {
+      margin: 5px 0;
+      color: #4CAF50;
+    }
+
+   
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .header img {
+        width: 60px;
+        height: 60px;
+      }
+
+      .header h1 {
+        font-size: 20px;
+      }
+
+      .container {
+        width: 95%;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Adikavi Nannaya University Logo">
+      <h1>Adikavi Nannaya University</h1>
+    </div>
+  </header>
+
+  <div class="container">
+    <h2>About Us</h2>
+    <h3>Hello and welcome!</h3>
+    <p>We understand that there are plenty of resources available for studying, but having everything in one place would make things much easier. That’s why we created this website – to provide BTech students with syllabus notes, previous exam papers, and other essential study materials, all in one convenient location.</p>
+    <p>Our platform is designed to be user-friendly, so students can easily access the resources they need without the hassle of searching through multiple sources. We aim to simplify the study process, allowing students to focus on learning and skill-building.</p>
+    
+    <h3>Why Choose Us?</h3>
+    <ul>
+      <li>Comprehensive resources for all subjects</li>
+      <li>User-friendly interface for easy navigation</li>
+      <li>Centralized access to study materials</li>
+      <li>Timely updates with the latest exam patterns</li>
+      <li>Support for academic and professional development</li>
+    </ul>
+
+    <p>We believe that having all the necessary materials in one place will not only save time but also reduce stress. How would you feel knowing that you have everything you need right at your fingertips?</p>
+    <p>By bringing everything together, we hope to support students in both their academic success and their professional development.</p>
+  </div>
+</body>
+</html>
